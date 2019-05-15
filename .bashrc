@@ -1,6 +1,9 @@
 alias vimrc='vim ~/.vimrc'
 alias bashrc='vim ~/.bashrc'
 alias ls='ls -al'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 function parse_git_branch {
    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }

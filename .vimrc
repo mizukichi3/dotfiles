@@ -38,6 +38,49 @@ set wrapscan
 " 検索語をハイライト表示
 set hlsearch
 " 行末のスペースを削除
-auto BufWritePre * :%s/\s\+$//ge
+"auto BufWritePre * :%s/\s\+$//ge
 " 改行コード表示
 se list
+
+"NeoBundle Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath+=$HOME/.vim/bundle/neobundle.vim/
+
+" Required:
+call neobundle#begin(expand('$HOME/.vim/bundle'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Add or remove your Bundles here:
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'flazz/vim-colorschemes'
+
+" You can specify revision/branch/tag.
+NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+
+" Plugins
+NeoBundle 'pocke/sushibar.vim'
+
+" Required:
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+"End NeoBundle Scripts-------------------------
+
+"Plugins Settings
+set statusline=%!sushibar#sushibar()
+set laststatus=2

@@ -59,3 +59,8 @@ autoload -U compinit; compinit
 
 # エイリアス
 alias ls='ls -al'
+alias gc='git checkout $(git branch -a | peco)'
+
+# AWS CLIを有効にする
+export PATH=$PATH:$HOME/Library/Python/3.7/bin
+source $HOME/Library/Python/3.7/bin/aws_zsh_completer.sh

@@ -49,7 +49,7 @@ function rprompt-git-current-branch {
 
 setopt prompt_subst
 
-RPROMPT='`rprompt-git-current-branch`'
+RPROMPT='`rprompt-git-current-branch`%{${fg[white]}%}[%*]%{${reset_color}%}'
 
 # Emacsライクなキーバインド
 bindkey -e
@@ -64,3 +64,4 @@ alias gc='git checkout $(git branch -a | peco)'
 # AWS CLIを有効にする
 export PATH=$PATH:$HOME/Library/Python/3.7/bin
 source $HOME/Library/Python/3.7/bin/aws_zsh_completer.sh
+export PATH="/usr/local/opt/ruby/bin:$PATH"
